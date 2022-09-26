@@ -18,36 +18,12 @@ Input: nums = [-1,1,0,-3,3]
 Output: [0,0,9,0,0]
 */
 
-// #include <iostream>
-// using namespace std;
-// void productOfArray(int a[], int size)
-// {
-//     int p[size], product = 1;
-//     for (int i = 0; i < size; i++)
-//     {
-//         product = product * a[i];
-//     }
-//     for (int i = 0; i < size; i++)
-//     {
-//         p[i] = product / a[i];
-//         cout << p[i] <<" ";
-//     }
-// }
-// int main()
-// {
-//     int a[] = {-1,1,0,-3,3};
-//     int size = sizeof(a) / sizeof(a[0]);
-//     productOfArray(a, size);
-//     return 0;
-// }
+
 
 #include <iostream>
 using namespace std;
 int array(int arr1[],int s)
 {
-   
-    int arr[s];
-         
     for (int i = 0; i <s; i++)
     {
         int sum = 1;
@@ -56,12 +32,12 @@ int array(int arr1[],int s)
           if(j!=i)
            sum=sum*arr1[j];
         }
-        cout<<sum;
+        cout<<sum<<" ";
     }
 }
 int main()
 {
-    int a[] = {-1, 1, 0, -3, 3};
+    int a[] = {1,2,3,4};
     int size = sizeof(a) / sizeof(a[0]);
     array(a,size);
     
