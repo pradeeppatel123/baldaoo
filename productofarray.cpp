@@ -24,16 +24,33 @@ Output: [0,0,9,0,0]
 using namespace std;
 int array(int arr1[],int s)
 {
-    for (int i = 0; i <s; i++)
-    {
-        int sum = 1;
-        for (int j = 0; j <s; j++)
-        {
-          if(j!=i)
-           sum=sum*arr1[j];
-        }
-        cout<<sum<<" ";
+    int pre[s];
+    int sup[s];
+    pre[0]=arr1[0];
+    for(int i=1;i<s;i++){
+       pre[i]=pre[i-1]*arr1[i];
     }
+    sup[s-1]=arr1[s-1];
+     for(int i=s-2;i>=0;i--){
+       sup[i]=sup[i+1]*arr1[i];
+    }
+    
+    for(int i=0;i<s;i++){
+        if(i==0){
+            arr1[i]=sup[i+1];
+        }
+        else if(i==s-1){
+            arr1[i]=pre[i-1];
+        }
+        else{
+            arr1[i]=pre[i-1]*sup[i+1];
+        }
+    }
+
+    for(int i=0;i<s;i++){
+        cout<<arr1[i]<<" ";
+    }
+    
 }
 int main()
 {
